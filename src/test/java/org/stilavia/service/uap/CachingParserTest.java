@@ -1,10 +1,10 @@
-package ua_parser;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+package org.stilavia.service.uap;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 /**
  * These tests really only redo the same tests as in ParserTest but with a

@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package ua_parser;
+package org.stilavia.service.uap;
 
 /**
  * @author Steve Jiang (@sjiang) <gh at iamsteve com>
  */
-public class DeviceTest extends DataTest<Device> {
+public class DeviceTest extends org.stilavia.service.uap.DataTest<Device> {
   @Override
   protected Device getRandomInstance(long seed, StringGenerator g) {
     random.setSeed(seed);

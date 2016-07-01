@@ -13,20 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.stilavia.service.uap;
 
-package ua_parser;
+import org.junit.Before;
+import org.junit.Test;
+import org.yaml.snakeyaml.Yaml;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
-import org.junit.Before;
-import org.yaml.snakeyaml.Yaml;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Tests parsing results match the expected results in the test_resources yamls
@@ -104,9 +103,9 @@ public class ParserTest {
 
     Parser testParser = parserFromStringConfig(testConfig);
     Client result = testParser.parse("ABC12\\34 (CashPhone-$9.0.1 CatOS OH-HAI=/^.^\\=)");
-    assertThat(result.userAgent.family, is("ABC (12\\34)"));
-    assertThat(result.os.family, is("CatOS 9000"));
-    assertThat(result.device.family, is("CashPhone $9"));
+    assertThat(result.getUserAgent().getFamily(), is("ABC (12\\34)"));
+    assertThat(result.getOs().getFamily(), is("CatOS 9000"));
+    assertThat(result.getDevice().getFamily(), is("CashPhone $9"));
   }
 
   @Test (expected=IllegalArgumentException.class)
